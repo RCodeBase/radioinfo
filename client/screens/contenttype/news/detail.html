@@ -1,0 +1,45 @@
+
+<div class="col-xs-12 col-sm-9 p-a-1">
+  <div class="col-xs-12 bg-white m-y-2">
+    <div class="col-xs-12 p-a-0">
+      <h3  class="m-b-0">{{content.title}}</h3>
+    </div>
+    <div class="col-xs-12 p-a-0">
+    <hr class="m-y-1">
+    <div id="content-img" class="pull-right">
+      <img ng-src="{{base_path}}{{content.fields.image.url}}">
+      <div ng-if="content.image_caption">
+        <div class="image-caption">{{content.fields.image_caption}}</div>
+      </div>          
+    </div>
+    <div ng-bind-html="content.fields.body.data"></div>
+    <!-- <div class="content-categories">{{content.category}}</div> -->
+    </div>
+    <div class="col-xs-12 col-sm-6 p-a-1 comment-count">
+      <div><strong>{{comment_length}} </strong><span>Comment</span></div>
+    </div>
+    <div class="col-xs-12 col-sm-6 p-a-1" ng-if="content.comments">
+      <button class="btn btn-xs btn-warning pull-right comment-btn" ng-click="postComment()">POST A COMMENT</button>
+    </div> 
+     <div class="col-xs-12 bg-grey m-y-2" ng-if="no_user">
+      <div class="p-a-1">Please login to comment!</div>
+    </div>
+    <!-- show comment if any -->  
+    <div class="col-xs-12 col-sm-12 p-a-2">
+      <div class="comment-sction" ng-repeat="comment_item in comments">
+        <div class="comment-row">
+          <div class="news_comment_screenName">{{comment_item.data.screen_name}}</div>
+          <span class="news_comment_date">{{comment_item.comment_date | date:'dd-MMMM-yyyy h:ma'}}</span><br/>
+          <div class="news_comment_text">{{comment_item.data.comment}}</div>
+        </div>
+      </div>
+    </div>
+  </div>   
+  <div class="col-xs-12 bg-grey m-y-2" ng-if="postcomment">
+    <comment></comment> 
+  </div> 
+</div>
+
+
+
+

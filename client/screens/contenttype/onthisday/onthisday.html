@@ -1,0 +1,20 @@
+<div class="col-xs-12 col-sm-9 p-a-1">
+  <div class="col-xs-12 bg-white m-y-2">
+    <div class="col-xs-12 col-sm-9 p-a-0">
+      <h3  class="m-b-0">{{content.type}}</h3>
+    </div>
+    <div class="col-xs-12 col-sm-2 p-a-1 m-a-2">
+      <select ng-options="item as item for item in content.month track by item" ng-change="update()" ng-model="month" required ></select>
+      <select ng-options="item as item for item in content.day track by item" ng-change="update()" ng-model="day" required></select>
+    </div>
+    <div class="col-xs-12 p-a-0">
+    <hr class="m-y-1">
+    <!-- <div class="title">
+      {{content.title}}
+    </div> -->
+    <div ng-if="error" class="error">{{error}}</div>
+    <div ng-if="content.body" ng-bind-html="content.body"></div>
+    <!-- <div class="content-categories">{{content.category}}</div> -->
+    </div>
+  </div>        
+</div>

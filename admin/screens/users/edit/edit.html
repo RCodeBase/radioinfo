@@ -1,0 +1,53 @@
+
+<form ng-submit="UpdateUser()" name="createForm" class="col-xs-12">
+    <div class="form-group col-xs-12 nopadding">
+        <label class="col-xs-12 nopadding">Username</label>
+        <div class="col-xs-6 nopadding">
+            <input type="text" ng-model="user.local.username" placeholder="Username" name="username" tabindex="1" required autofocus class="form-control">
+        </div>
+        <span class="error help-block col-xs-6" ng-show="createForm.username.$touched && createForm.username.$error.required">Required!</span>
+    </div>
+    <div class="form-group col-xs-12 nopadding">
+        <label class="col-xs-12 nopadding">Email</label>
+        <div class="col-xs-6 nopadding">
+            <input type="email" ng-model="user.local.email" placeholder="Email" name="email" tabindex="2" required class="form-control">
+        </div>
+        <span class="error help-block col-xs-6" ng-show="createForm.email.$touched && createForm.email.$error.required">Email Required.</span>
+        <span class="error help-block col-xs-6" ng-show="createForm.email.$touched && createForm.email.$error.email">This is not a valid email.</span>
+    </div>
+    <div class="form-group col-xs-12 nopadding">
+        <label class="col-xs-12 nopadding">Password</label>
+        <div class="col-xs-6 nopadding">
+            <input type="password" ng-model="user.local.password" placeholder="Type your password" tabindex="3" name="password" class="form-control">
+        </div>
+    </div>
+    <div class="form-group col-xs-12 nopadding">
+        <label class="col-xs-12 nopadding">Confirm Password</label>
+        <div class="col-xs-6 nopadding">
+            <input type="password" ng-model="user.local.confirmPassword" placeholder="Confirm password" tabindex="4" name="cpassword" class="form-control">
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Status</label>
+        <div class="radio">
+            <label>
+                <input type="radio" ng-model="user.status" value="true" tabindex="5">Active</label>
+        </div>
+        <div class="radio">
+            <label>
+                <input type="radio" ng-model="user.status" value="false" tabindex="6">Block</label>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Roles</label>
+        <div class="checkbox" ng-repeat="role in roles">
+            <label><input type="checkbox" ng-checked="user.roles.indexOf(role._id) > -1 ? true :false || role.machine_name=='authenticated_user'"  ng-disabled="role.machine_name=='authenticated_user'" ng-click="checkboxclick(role._id)" ng-model="checkboxes">{{role.name}}</label>
+        </div>
+    </div>
+    <div class="error" ng-show="error" ng-repeat="err in error">{{err}}</div>
+    <div class="col-xs-12 nopadding">
+        <input type="submit" class="btn btn-primary" value="Submit">
+    </div>
+</form>
+
+

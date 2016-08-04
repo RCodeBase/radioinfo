@@ -1,0 +1,29 @@
+<div class="vcenter nopadding col-sm-12 fullheight ">
+    <div class="col-sm-4 hcenter loginForm">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Login Form</h3>
+            </div>
+            <div class="panel-body">
+                <form ng-submit="login()" name="loginForm" class="col-sm-12">
+                    <div class="form-group col-xs-12 nopadding">
+                        <label class="col-xs-12 nopadding">Username</label>
+                        <div class="col-xs-12 nopadding">
+                            <input type="text" ng-model="user.username" placeholder="Username" name="username" tabindex="1" required autofocus class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group col-xs-12 nopadding">
+                        <label class="col-xs-12 nopadding">Password</label>
+                        <div class="col-xs-12 nopadding">
+                            <input type="password" ng-model="user.password" placeholder="Type your password" tabindex="3" name="password" required class="form-control">
+                        </div>
+                    </div>
+                    <div class="error" ng-show="error" >{{error}}</div>
+                    <div class="col-xs-12 nopadding">
+                        <input type="submit" class="btn btn-primary" value="Submit">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

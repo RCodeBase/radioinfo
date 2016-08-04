@@ -1,0 +1,18 @@
+<ul class="list-group col-xs-12">
+    <li class="list-group-item col-xs-12 active">
+        <div class="col-sm-2 nopadding"> Permission</div>
+        <div class="col-sm-1 " ng-repeat="role in roles"> {{role.name}} </div>
+    </li>
+</ul>
+<form ng-submit="savePermissions()">
+    <ul class="list-group  col-xs-12" ng-repeat="(key, array) in permissions">
+        <li class="list-group-item  col-xs-12 active">{{key}}</li>
+        <li class="list-group-item col-xs-12" ng-repeat="name in array">
+            <div class="col-xs-2 nopadding">{{name}}</div>
+            <div class="col-sm-1  text-center page_col" ng-repeat="role in roles">
+                <input type="checkbox" ng-checked="{{role.permissions[key].indexOf(name) > -1 ? true : false}}" value="{{name}}" key="{{key}}" for="{{role._id}}">
+            </div>
+        </li>
+    </ul>
+    <button class="btn btn-primary" type="submit">Save Permissions</button>
+</form>

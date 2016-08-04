@@ -1,0 +1,89 @@
+<div class="col-xs-12 col-sm-9 p-a-1 bg-white">
+  <h2>User account</h2>
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#register" class="text-b">Create new account</a></li>
+    <li><a data-toggle="tab" href="#login" class="text-b">Log in</a></li>
+    <li><a data-toggle="tab" href="#password" class="text-b">Request new password</a></li>
+  </ul>
+    <div class="tab-content col-xs-12">
+        <div id="register" class="tab-pane fade in active">
+          <h3>Create new account</h3>
+          <form role="form" ng-submit="register()" name="createForm" novalidate>
+            <div class="form-group">
+              <label for="username">Username *:</label>
+              <input type="text" class="form-control" ng-model="user.local.username" id="username" placeholder="Username" required>
+              <h6>Spaces are allowed; punctuation is not allowed except for periods, hyphens, apostrophes, and underscores.</h6>
+            </div>
+            <div class="form-group">
+              <label for="email">E-mail address *:</label>
+              <input type="email" class="form-control" ng-model="user.local.email" id="email" placeholder="E-mail address" required>
+              <h6>A valid e-mail address. All e-mails from the system will be sent to this address. The e-mail address is not made public and will only be used if you wish to receive a new password or wish to receive certain news or notifications by e-mail.</h6>
+            </div>
+            <div class="form-group">
+              <label for="pwd">Password *:</label>
+              <input type="password" class="form-control" ng-model="user.local.password" id="pwd" placeholder="Password" required>
+              <label for="cpwd">Confirm Password *:</label>
+              <input type="password" class="form-control" ng-model="user.local.confirmPassword" id="cpwd" placeholder=" Confirm Password" required>
+            </div>
+            <div class="error" ng-show="error" ng-repeat="err in error track by index">{{err}}</div>
+            <div class="checkbox">
+              <div class="panel panel-default">
+                <div class="panel-heading"><b>CAPTCHA</b></div>
+                <div class="p-x-1">
+                  <h6>This question is for testing whether you are a human visitor and to prevent automated spam submissions.</h6>
+                   <div class="form-group">
+                      <div vc-recaptcha key="model.key" on-success="setResponse(response)">
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-default">Create new account</button></form>
+        </div>
+    </div>
+</div>
+
+
+<!-- 
+<form ng-submit="register()" name="createForm" class="col-xs-12">
+
+<div class="form-group col-xs-12 nopadding">
+    <label class="col-xs-12 nopadding">Username</label>
+    <div class="col-xs-6 nopadding">
+		<input type="text" ng-model="user.local.username" placeholder="Username" name="username" tabindex="1" required autofocus class="form-control">    	
+    </div>
+	<span class="error help-block col-xs-6" ng-show="createForm.username.$touched && createForm.username.$error.required">Required!</span>
+</div>
+
+<div class="form-group col-xs-12 nopadding">
+    <label class="col-xs-12 nopadding">Email</label>
+    <div class="col-xs-6 nopadding">
+	    <input type="email" ng-model="user.local.email" placeholder="Email" name="email" tabindex="2" required  class="form-control">
+    </div>
+    <span class="error help-block col-xs-6" ng-show="createForm.email.$touched && createForm.email.$error.required">Email Required.</span>
+
+     <span class="error help-block col-xs-6" ng-show="createForm.email.$touched && createForm.email.$error.email">This is not a valid email.</span>
+</div>
+
+<div class="form-group col-xs-12 nopadding">
+    <label class="col-xs-12 nopadding">Password</label>
+    <div class="col-xs-6 nopadding">
+	    <input type="password" ng-model="user.local.password"  placeholder="Type your password" 
+	    tabindex="3" name="password" required class="form-control">
+    </div>
+   	<span class="error help-block col-xs-6" ng-show="createForm.password.$touched && createForm.password.$error.required">Password is required.</span>
+</div>
+
+<div class="form-group col-xs-12 nopadding">
+    <label class="col-xs-12 nopadding">Confirm Password</label>
+    <div class="col-xs-6 nopadding">
+	    <input type="password" ng-model="user.local.confirmPassword" placeholder="Confirm password" tabindex="4" name="cpassword" required class="form-control">
+    </div>
+    <span class="error help-block col-xs-6" ng-show="createForm.cpassword.$touched && createForm.cpassword.$error.required">Password is required.</span>
+</div>
+
+	<div class="error" ng-show="error" ng-repeat="err in error">{{err}}</div>
+	<div class="col-xs-12 nopadding">
+		<input type="submit" class="btn btn-primary" value="Submit">
+	</div>
+</form> -->

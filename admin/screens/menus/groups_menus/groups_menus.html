@@ -1,0 +1,12 @@
+<button class="btn btn-primary" ng-click="createRootMenu()"> Create Menu</button>
+<button class="btn btn-primary" ng-click="saveChanges()"> Save Changes</button>
+<button class="btn btn-primary" ng-click="expandall()"> Expand All</button>
+<button class="btn btn-primary" ng-click="collapseall()"> Collapse All</button>
+<tree-dnd
+        tree-data="tree_data"
+        tree-control="my_tree"
+        column-defs="col_defs"
+        enable-drag="true"
+        enable-drop="true"
+        expand-on="expanding_property"
+        ></tree-dnd>

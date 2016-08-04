@@ -1,0 +1,86 @@
+<div class="col-xs-12 col-sm-9 p-a-1">
+  <div class="col-xs-12 p-a-0 bg-black m-y-2">
+    <div class="col-sm-9 p-a-2">
+
+      <flex-slider slider-id="slider" flex-slide="row in news track by $index" animation="fade" animation-loop="true" sync="#carousel" slideshow="true" control-nav="false" init-delay="0">
+
+        <li>
+          <img ng-src="{{base_path}}{{row.fields.image.url}}">
+          <div id="img-title">
+          <h1>{{row.title}}</h1>
+          <div class="btn btn-sm btn-warning pull-right"><a ui-sref="index.newsDetail({ title: row.machine_name })">Read More</a></div>
+          </div>
+        </li>
+
+      </flex-slider>
+    </div>
+	    <div class="col-sm-3 hidden-xs p-a-2" >
+	      <flex-slider id="thumb" slider-id="carousel" flex-slide="row in news track by $index" animation="slide" animation-loop="true" item-width="210" item-margin="5" as-nav-for="#slider" slideshow="true" animationSpeed="100" control-nav="false" >
+	        <li>
+	          <img ng-src="{{base_path}}{{row.fields.image.url}}">
+	          <div id="thumb-title">{{row.title}}</div>
+	        </li>
+	      </flex-slider>
+	    </div>
+    </div>
+
+    <div class="col-xs-12 m-y-1 bg-white">    
+    <div class="col-sm-6 col-xs-12 p-a-0 p-r-1 p-b-1 news_block">
+      <div class="col-xs-12 p-a-0 header">
+        <h4>MORE NEWS:</h4>
+      </div>
+      <div class="content">
+        <div class="row-content" ng-repeat="row in list track by $index">
+          <div class="col-xs-5 p-a-0">
+            <img style="height: 94px;" class="col-xs-12 p-a-0" src="{{base_path}}{{row.fields.image.url}}">
+          </div>
+          <div class="col-xs-7 p-x-2">
+            <div class="content-title"><b><a ui-sref="index.newsDetail({title : row.machine_name})">{{row.title}}</a></b></div>
+            <div class="m-a-0" style="font-size:13px" ng-bind-html="row.fields.body.data | htmlToPlaintext | trim: 50"></div>
+            <span style="font-size:13px">{{row.created_on | date:'dd MMMM, yyyy'}}</span>
+          </div>
+        </div>
+      </div>
+      <div class=" p-a-1">
+        <a ui-sref="index.newsList" class="nav-link btn btn-warning btn-sm "><b>MORE NEWS</b></a>
+      </div>
+    </div>
+    <div class="col-sm-6 col-xs-12 p-a-0 p-r-1 p-b-1 news_block">
+      <div class="col-xs-12 p-a-0 header">
+        <h4>HOT OFF THE NET:</h4>
+      </div>
+      <div class="content">
+        <div class="row-content" ng-repeat="row in hotNews track by $index">
+          <div class="col-xs-5 p-a-0">
+            <img style="height: 94px;" class="col-xs-12 p-a-0" src="{{base_path}}{{row.fields.image.url}}">
+          </div>
+          <div class="col-xs-7 p-x-2">
+            <div class="content-title"><b><a ui-sref="index.HotNewsDetail({title:row.machine_name})">{{row.title}}</a></b></div>
+            <div class="m-a-0" style="font-size:13px" ng-bind-html="row.fields.description.data | htmlToPlaintext | trim: 50"></div>
+            <span style="font-size:13px">{{row.created_on | date:'dd MMMM, yyyy'}}</span>
+          </div>
+        </div>
+      </div>
+      <div class=" p-a-1">
+        <a ui-sref="index.HotNewsList" class="nav-link btn btn-warning btn-sm"><b>NEWS</b></a>
+      </div>
+    </div>
+    
+  </div>
+  <div class="col-xs-12 col-sm-12 p-a-0 " ng-if="ads_left4and5" >
+    <div class="col-xs-12 col-sm-6 p-a-1" ng-repeat="ads in ads_left4and5" ng-class-odd="'odd'" ng-class-even="'even'" ng-class="{'p-l-0': $first, 'p-r-0': $last}">
+      <a href="{{ads.fields.link}}">
+        <img src="{{base_path}}{{ads.fields.banner_image.url}}">
+      </a>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-12 p-a-0 " ng-if="ads_left6and7and8" >
+    <div class="col-xs-12 col-sm-4 p-a-1" ng-repeat="ads in ads_left6and7and8" ng-class-odd="'odd'" ng-class-even="'even'" ng-class="{'p-l-0 first': $first, 'p-r-0 last': $last}">
+      <a href="{{ads.fields.link}}">
+        <img src="{{base_path}}{{ads.fields.banner_image.url}}" class="col-xs-12 p-a-0">
+      </a>
+    </div>
+  </div>
+
+</div>
+  

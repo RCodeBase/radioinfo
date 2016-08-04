@@ -1,0 +1,10 @@
+<form name="changepassword" ng-submit="changePassword()">
+<label>Current Password</label><br>
+<input type="password" ng-model="user.local.password"="currentPassword" required><br>
+<label>New password</label><br>
+<input type="password" ng-model="user.npassword"="password" required><br>
+<label>Confirm password</label><br>
+<input type="password" ng-model="user.cnpassword"="confirmpassword" required><br>
+<input  type="submit" name="save" value="Save">
+<span ng-model="error">{{error}}</span>
+</form>

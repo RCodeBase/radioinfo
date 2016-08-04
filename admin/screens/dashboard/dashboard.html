@@ -1,0 +1,169 @@
+<div id="wrapper">
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/"><img src="/theme/logo-blue-gatawey.png" class="logo"></a>
+            </div>
+
+            <!-- Top Menu Items -->
+            <ul class="nav navbar-right top-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
+                    <ul class="dropdown-menu message-dropdown">
+                        <li class="message-preview">
+                            <a href="#">
+                                <div class="media">
+                                    <span class="pull-left">
+                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
+                                    </span>
+                                    <div class="media-body">
+                                        <h5 class="media-heading"><strong>John Smith</strong>
+                                        </h5>
+                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="message-preview">
+                            <a href="#">
+                                <div class="media">
+                                    <span class="pull-left">
+                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
+                                    </span>
+                                    <div class="media-body">
+                                        <h5 class="media-heading"><strong>John Smith</strong>
+                                        </h5>
+                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="message-preview">
+                            <a href="#">
+                                <div class="media">
+                                    <span class="pull-left">
+                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
+                                    </span>
+                                    <div class="media-body">
+                                        <h5 class="media-heading"><strong>John Smith</strong>
+                                        </h5>
+                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="message-footer">
+                            <a href="#">Read All New Messages</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
+                    <ul class="dropdown-menu alert-dropdown">
+                        <li>
+                            <a href="#">Alert Name <span class="label label-default">Alert Badge</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Alert Name <span class="label label-primary">Alert Badge</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Alert Name <span class="label label-success">Alert Badge</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Alert Name <span class="label label-info">Alert Badge</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Alert Name <span class="label label-warning">Alert Badge</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Alert Name <span class="label label-danger">Alert Badge</span></a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">View All</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle pointer" data-toggle="dropdown"><i class="fa fa-user"></i> {{loggedInUser.local.username}}<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a ui-sref="dashboard.profile"><i class="fa fa-fw fa-user"></i> Profile</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a ng-click="logout()" class="pointer"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    
+                    <li  ng-class="menuname == 'dashboard' ? 'active' :'deactive'" ng-click="setBreadCrumb()">
+                        <a ui-sref="dashboard.home"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                    </li>
+
+                    <li ng-class="menuname == 'roles' ? 'active' :'deactive'">
+                        <a ui-sref="dashboard.roles" ><i class="fa fa-user"></i> Roles</a>
+                    </li>
+
+                    <li ng-class="menuname == 'users' ? 'active' :'deactive'">
+                        <a ui-sref="dashboard.users" ><i class="fa fa-user"></i> Users</a>
+                    </li>
+                    <li ng-class="menuname == 'permissions' ? 'active' :'deactive'">
+                        <a ui-sref="dashboard.permissions" ><i class="fa fa-user"></i> Permissions</a>
+                    </li>              
+                    <li ng-class="menuname == 'taxonomy' ? 'active' :'deactive'">
+                        <a ui-sref="dashboard.taxonomy" ><i class="fa fa-user"></i> Taxonomy</a>
+                    </li>   
+                    <li ng-class="menuname == 'menus' ? 'active' :'deactive'">
+                        <a ui-sref="dashboard.groups" ><i class="fa fa-user"></i> Menus</a>
+                    </li>       
+                    <li ng-class="menuname == 'contenttypes' ? 'active' :'deactive'">
+                        <a ui-sref="dashboard.contenttypes" ><i class="fa fa-user"></i> Content Types</a>
+                    </li>              
+                    <li ng-class="menuname == 'content' ? 'active' :'deactive'">
+                        <a ui-sref="dashboard.content" ><i class="fa fa-user"></i> Contents</a>
+                    </li>       
+                    <li ng-class="menuname == 'contentadd' ? 'active' :'deactive'">
+                        <a ui-sref="dashboard.contentadd" ><i class="fa fa-user"></i> Add Content</a>
+                    </li>       
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12 nopadding">
+                        <h1 class="page-header">
+                             <small>{{pagetitle}}</small>
+                        </h1>
+                            <ol class="breadcrumb" compile="breadcrumb">
+                        </ol>
+                    </div>
+                </div>
+
+            <div class="row">
+                    <div class="content" ui-view></div>
+                </div>
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /#page-wrapper -->
+    </div>
+

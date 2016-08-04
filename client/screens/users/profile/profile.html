@@ -1,0 +1,28 @@
+<div class="col-xs-12 col-sm-9 p-a-1 bg-white">
+	<form class="form-horizontal" role="form" ng-submit="save()" name="profile">
+     <div class="form-group">
+       <label class="control-label col-sm-3" for="email">Email:</label>
+       <div class="col-sm-9">
+         <input type="email" class="form-control" ng-model="user.local.email" id="email" required>
+       </div>
+     </div>
+     <div class="form-group">
+       <label class="control-label col-sm-3" for="pwd">Password:</label>
+       <div class="col-sm-9">          
+         <input type="password" class="form-control" ng-model="user.password" id="pwd" placeholder="Enter password">
+       </div>
+     </div>
+     <div class="form-group">
+       <label class="control-label col-sm-3" for="pwd1">Repeat Password:</label>
+       <div class="col-sm-9">          
+         <input type="password" class="form-control" ng-model="user.password1" id="pwd1" placeholder="Enter password">
+       </div>
+     </div>
+     <div class="form-group">        
+       <div class="col-sm-offset-3 col-sm-9">
+         <button type="submit" class="btn btn-default">Save</button>
+       </div>
+     </div>
+   </form>
+</div>
+

@@ -1,0 +1,28 @@
+	    <div class="col-xs-12 col-sm-9 p-a-1">
+	      <div class="col-xs-12 p-a-1 bg-white m-y-2">
+	      	<div class="col-xs-12 p-a-0">
+              <h3  class="m-b-0">{{listType | uppercase}}:</h3>
+            </div>
+            <div class="col-xs-12 p-a-0 news_block" >
+              <hr>
+              <div class="row-content" ng-repeat="row in content track by $index">
+	              <div class="col-sm-3 col-xs-12 p-a-1">
+	              	<img class="col-xs-12 p-a-0" ng-src="{{base_path}}{{row.fields.image.url}}">
+	              </div>
+	              <div class="col-sm-9 col-xs-12 p-a-1 p-x-2">
+	                <div class="content-title">
+	                	<b><a ui-sref="index.newsDetail({title : row.machine_name})">{{row.title}}</a></b>
+	                </div>
+	               <div ng-bind-html="row.fields.body.data | htmlToPlaintext | trim: 300"></div>
+	               <span style="font-size:13px">{{row.created_on | date:'dd MMMM, yyyy'}}</span>
+	              </div>
+              </div>
+              <div>
+              	<p>Current page: {{ currentpage}} of {{ getTotalPages }}</p>
+				<button type="button" class="btn btn-primary" ng-click="previousPage()">Previous page</button>
+				<button type="button" class="btn btn-primary" ng-click="nextPage()">Next page</button>
+              </div>
+				
+            </div>
+	      </div>
+	    </div>     

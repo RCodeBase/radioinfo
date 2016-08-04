@@ -1,0 +1,220 @@
+<div class="container p-a-0">
+  <div class="skyadd skyadd-right pull-left hidden-sm hidden-xs hidden-md">
+      <a href="/track?from=home&type=ad&destination={{skyadd_left.link}}">
+          <img class=" col-xs-12 p-a-0" src="{{base_path}}{{skyadd_left.image}}">
+      </a>
+  </div>
+  <div class="skyadd skyadd-left pull-right hidden-sm hidden-xs hidden-md">
+      <a href="/track?from=home&type=ad&destination={{skyadd_right.link}}">
+          <img class=" col-xs-12 p-a-0" src="{{base_path}}{{skyadd_right.image}}">
+      </a>
+  </div>
+
+    <section class="header col-xs-12 p-a-0">
+        <div class="col-xs-12 p-a-0">
+            <div class="pull-right">
+                <span class="pull-left btn-group p-a-1">
+          <a ui-sref="index.login" type="button" class="btn btn-warning btn-sm">SIGN IN</a>  
+          <a ui-sref="index.access" type="button" class="btn btn-warning btn-sm">SUBSCRIBE</a>
+          </span>
+            <span class="pull-left p-a-1">
+             <form ng-submit="searchdata()">
+            <input class="form-control form-control-sm" name="test" type="text" placeholder="SEARCH">
+            <div class="radio text-center">
+             
+                <label>
+                  <input type="radio" name="blankRadio" id="blankRadio1" value="option1" class="display-1">Any Match
+                </label>
+                <label>
+                  <input type="radio" name="blankRadio" id="blankRadio1" value="option1">Exact Match
+                </label>
+              </form>
+            </div>
+          </span>
+                <span class="pull-right btn-group p-a-1">
+          <button type="button" class="btn btn-link btn-sm p-a-0"><a href="https://twitter.com/radioinfo" target="_blank">
+          <img src="image/twitter.png"></a></button>
+          <button type="button" class="btn btn-link btn-sm p-y-0"><a href="https://www.facebook.com/radioinfocomau" target="_blank"><img src="image/facebook.png"></a></button>
+          </span>
+            </div>
+            <div class="col-xs-12 p-a-0">
+                <span class="p-a-2 pull-left"><a ui-sref="index.home"><img src="image/logo.png"></a></span>
+                <span class="pull-right p-a-2"><a href="/track?from=home&type=ad&destination={{ads_top.link}}"><img src="{{base_path}}{{ads_top.image}}" title="addvertiesment"></a></span>
+            </div>
+            <div class="col-sm-7 col-xs-12 text-left alert-success" role="alert" ng-show=sucess><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> {{sucess}}
+            </div>
+            <div class="col-sm-5 col-xs-12 text-right pull-right" ng-show="loggedInUser">
+                <a href="#/user/profile">Welcome {{loggedInUser.local.username}}</a> /
+                <a href="#/user/profile"> My Account</a> /
+                <a ng-click="logout()" class="pointer"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+            </div>
+            <div class="col-sm-5 col-xs-12 text-right pull-right" ng-hide="loggedInUser">
+                <a ui-sref="index.login">Sign In</a> /
+                <a href="#/register"> Register</a>
+            </div>
+        </div>
+    </section>
+    <section class="col-xs-12 p-x-0 menu">
+        <div class="col-xs-12 p-x-0 p-t-1">
+            <nav class="navbar navbar-default m-a-0">
+                <div class="container-fluid p-a-0">
+                    <div class="navbar-header m-a-0">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse m-a-0 p-a-0" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav col-xs-12 p-a-0 ">
+                            <li ng-repeat="item in menus track by $index" class='parent' link="{{item.link}}">
+                                <a href="{{client_base_path}}{{item.link}}"><b>{{item.name | uppercase}}</b></a>
+                                <div class="hide myclass">
+                                    <ul ng-if="item.__children__">
+                                        <li class="pull-left p-a-2 m-r-2 m-l-2 child" ng-repeat="child_item in item.__children__" link="{{child_item.link}}">
+                                            <a href="{{client_base_path}}{{child_item.link}}">{{child_item.name}}</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                        <!--    <li class="pull-right p-a-1">
+                  <div><a href="/user/login" type="button" class="nav-link btn btn-warning btn-sm">Instant Full Access ▶</a></div>
+                </li> -->
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </section>
+    <section class="inner col-xs-12 p-a-0">
+        <div class="col-xs-12 p-a-1">
+            <div class="content" ui-view></div>
+            <div class="col-xs-12 col-sm-3 p-a-1">
+                <div class="col-xs-12 p-a-0 m-y-2" >
+
+                 <div class="col-xs-12 p-a-0 sidebar-jobs">
+                 <div class="col-xs-12 sidebar-jobs-header">
+                      <div class="col-xs-5 p-a-0 job-ticker-title">
+                        <a ui-sref="index.jobsList">Jobs Market</a></div>
+                      <div class="col-xs-7 p-x-1" ng-if="ticker_image.fields.banner_position == 'jobs banner'">
+                        <a href="{{ticker_image.link}}"><img class="ticker_img" ng-src="{{base_path}}{{ticker_image.image}}"></a>
+                      </div>                   
+                 </div>
+                 <div class="col-xs-12 sidebar-jobs-footer p-a-0">
+                      <ul ticker class="ticker">
+                        <li class="item-0 firstli"></li>
+                        <li ng-repeat="job in jobList" class="item-{{$index}}">
+                            <div class="col-xs-12 p-a-0 ticker-item">
+                                <div class="col-xs-12 p-a-0 sidebar-jobs-title"><b>{{job.title}}</b></div>
+                                <div class="col-xs-12 p-a-0">
+                                    <img class="col-xs-4 p-a-0" ng-src="{{base_path}}{{job.fields.station[0].url}}">
+                                    <div class="col-xs-8 p-a-0">{{job.fields.station[0].title}}</div>
+                                    <div class="pull-left more"><a href="#/jobs/{{job.machine_name}}">More >></a></div>
+                                </div>
+                            </div>
+                        </li>
+                      </ul>  
+                 </div>
+
+                      
+
+
+
+                 </div>
+
+            
+              </div>
+
+
+
+                <div class="col-xs-12 p-a-0 m-y-2 right-1" ng-if="ads_R1.fields.banner_position == 'right 1'">
+                    <a href="{{ads_R1.link}}"><img ng-src="{{base_path}}{{ads_R1.image}}"></a>
+                </div>
+                <div ng-if="ads_R1a">
+                    <div class="col-xs-12 p-a-0 m-y-2 right-1" ng-repeat="ads in ads_R1a">
+                        <a href="{{ads.fields.link}}"><img ng-src="{{base_path}}{{ads.fields.banner_image.url}}"></a>
+                    </div>
+                </div> 
+                <div class="col-xs-12 p-a-0 m-y-2 right-2" ng-if="ads_R2.fields.banner_position == 'right 2'">
+                    <a href="{{ads_R2.link}}"><img ng-src="{{base_path}}{{ads_R2.image}}" style="width:100%"></a>
+                </div>
+                <!-- Twitter script start -->
+                <div id="block-block-3">
+                    <script>
+                        window.onload = function() {
+                            jQuery('#twitter-widget-0').ready(function() {
+                                jQuery('#twitter-widget-0').contents().find('li').css("border-top", "1px dotted #CCCCCC");
+                                         hideTwitterBoxElements();
+                                var i = 0;
+                                jQuery('#twitter-widget-0').contents().find('ol').ticker({
+                                    initialTimeout: 1000,
+                                    mouseOnTimeout: 4000,
+                                    mouseOffTimeout: 3000,
+                                    scrollTime: 1200,
+                                    fadeTime: 1000,
+                                    fixContainer: true,
+                                    nextItem: function(lastItem) {
+                                        return lastItem;
+                                    }
+                                });
+                            });
+                        }
+                      var hideTwitterAttempts = 0;
+                     function hideTwitterBoxElements(){
+                         setTimeout( function() {jQuery('#twitter-widget-0').contents().find('li').each(function(){
+                                           var str=jQuery(this).html();
+                                          if (str.indexOf("Brock_Walter") >= 0 && str.indexOf("Thanks for the quote") >=0){
+                                           jQuery(this).hide();
+                                           } });hideTwitterAttempts++;
+                           if ( hideTwitterAttempts < 3 ) {
+                               hideTwitterBoxElements();
+                           }
+                       }, 1500);}
+                    </script>
+                    <h1>
+                        <a href="https://twitter.com/radioinfo" style="text-decoration:none;">
+                            <img src="{{base_path}}/image/twitter.png"  width="41px" height="53px" style="float:right;vertical-align:5px;margin:-2px 10px 0 0;" alt="Twitter">
+                            Twitter Updates
+                        </a>
+                    </h1>
+                    <a class="twitter-timeline" href="https://twitter.com/search?q=%40radioinfo%20-mediainfoAU%20-mediainfoWorldw%20-%403es56jcn99r04%20-RadioTodayWorld%20-%40_radiotoday%20-RadioTodayExtra%20-%40radiotodayextra%20-OldCroaky%20-%40SocialNewsCorp" data-widget-id="659301663870595072" data-chrome="noheader nofooter noborders  autoscroll">Tweets about @radioinfo -mediainfoAU -mediainfoWorldw -@3es56jcn99r04 -RadioTodayWorld -@_radiotoday -RadioTodayExtra -@radiotodayextra -OldCroaky -@SocialNewsCorp</a>
+                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+                    </script>
+                </div>
+                <!-- Twitter script end -->
+                <div class="col-xs-12 p-a-0 m-y-2 right-3" ng-if="ads_R3.fields.banner_position == 'right 3'">
+                    <a href="{{ads_R3.link}}"><img ng-src="{{base_path}}{{ads_R3.image}}"></a>
+                </div>               
+            </div>
+        </div>
+    </section>
+    <section class="footer col-xs-12 p-a-0">
+        <div class="col-xs-12 text-center p-a-0">
+            <div class="col-xs-12">asdasd
+                <div class="pull-left col-md-2 col-sm-3" ng-repeat="item in footer_menus track by $index">
+                    <ul class="list-unstyled text-left">
+                        <li>
+                            <a href="{{client_base_path}}{{item.link}}" aria-expanded='true'><b>{{item.name | uppercase}}</b></a>
+                            <li class="child-item" ng-if="item.__children__" ng-repeat="child_item in item.__children__">
+                                <a href="{{client_base_path}}{{child_item.link}}">{{child_item.name}}</a>
+                            </li>
+                        </li>
+                    </ul>
+                </div>
+                <div class="pull-left col-md-2 col-sm-3">
+                    <span class="pull-right btn-group p-a-1">
+                      <button type="button" class="btn btn-link btn-sm p-a-0"><a href="https://twitter.com/radioinfo" target="_blank">
+                      <img src="image/twitter.png"></a></button>
+                      <button type="button" class="btn btn-link btn-sm p-y-0"><a href="https://www.facebook.com/radioinfocomau" target="_blank"><img src="image/facebook.png"></a></button>
+                    </span>
+                </div>
+            </div>            
+        </div>
+    </section>
+    <section class="footer-bottom col-xs-12 p-a-0">
+        <div id="pageFooterCopyright" class="col-xs-12 label-default p-a-0">
+        radioinfo ABN: 87 004 005 109 &nbsp;P O Box 6430 North Ryde NSW 2113 Australia. &nbsp;T: 0413 790 666 02 9888 5705 &nbsp;|&nbsp; All content © 2012. All Rights Reserved.
+        </div>
+    </section>
+</div>

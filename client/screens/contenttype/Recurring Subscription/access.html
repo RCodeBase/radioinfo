@@ -1,0 +1,42 @@
+<div class="col-xs-12 col-sm-9 p-a-1 page">
+  <div class="col-xs-12 bg-white m-y-2">
+    <div class="col-xs-12 p-a-0">
+      <h3  class="m-b-0">{{type}}</h3>
+    </div>
+    <div class="col-xs-12 p-a-0 access">
+      <hr class="m-y-1">
+      <div class="col-xs-12 col-sm-12 p-a-0" ng-repeat="item in content track by $index" ng-class="{'product-odd': $index%2!=0,'product-even': $index%2==0}">
+      	<div class="col-xs-12 col-sm-9 p-a-1 content">
+      		<div><span>{{item.title}}</span></div>
+      		<div ng-if="item.fields.body">
+      			<div ng-bind-html="item.fields.body.data"></div>
+      		</div>
+      		<!-- for individual subscriber -->
+      		<div ng-if="item.machine_name=='individual_subscription'">
+      			<form ng-submit="individualSubscription()">
+      			<li ng-repeat="(key,value) in individual_value" class="p-y-1">
+      				 <input type="radio" ng-model="individual.individual_option" name="individual_option" value="{{key}}" required />{{value}}
+      			</li>
+    				  <br/><input type="submit" class="btn btn-xs btn-pay" value="Pay Now">
+    				</form>
+      		</div>
+      		<!-- for content community stations students and pensioners -->
+      		<div ng-if="item.machine_name=='community_stations_students_and_pensioners'">
+      			<form ng-submit="communitySubscription()">
+      			<li ng-repeat="(key,value) in community_value" class="p-y-1">
+      				 <input type="radio" ng-model="community.community_option" name="community_option" value="{{key}}" required />{{value}}
+      			</li>
+				  <br/><input type="submit" class="btn btn-xs btn-pay" value="Pay Now">
+				</form>    			
+      		</div>
+      	</div>
+      	<div ng-if="item.fields.short_description">
+      		<div class="col-xs-12 col-sm-3 p-a-0 description" ng-bind-html="item.fields.short_description.data"></div>
+      	</div>
+      </div>
+    </div>
+  </div> 
+  <div class="col-xs-12 p-a-0">
+  <img src="{{base_path}}/image/download.png" style="width:100%">
+  </div>
+</div>

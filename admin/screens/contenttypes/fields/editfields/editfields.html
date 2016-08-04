@@ -1,0 +1,166 @@
+<form ng-submit="updatefield()" name="updateafield">
+    <ul class="list-group">
+
+        <!--Label for Field-->
+        <li class="list-group-item col-xs-12">
+            <div class="col-xs-2"><label>Label</label> </div>
+            <div class="col-xs-10">
+                <input type="text" ng-change="create_machine_name(field.label)" ng-model="field.label" required placeholder="label" class="form-control">
+                <p class="help-block">Field Machine Name -> {{field.machine_name}}</p>        
+            </div>
+        </li>
+
+        <!--type for Field-->
+        <li class="list-group-item col-xs-12">
+            <div class="col-xs-2"><label>Type</label> </div>
+             <div class="col-xs-10">
+                <select class="form-control" ng-change="typechange()" ng-options="item.label for item in types track by item.value" ng-model="field.type"></select>
+             </div>
+        </li>
+
+        <!--show for Field extra settings-->
+        <li class="list-group-item col-xs-12" ng-if="['textarea','boolean','select_node','select_term'].indexOf(allowed_values_view) > -1">
+            <div class="col-xs-2"><label>Values</label> </div>
+            <div class="col-xs-10">
+                <!-- for list type-->
+                <textarea ng-if="allowed_values_view == 'textarea'" ng-model="allowed_values.textbox" placeholder="{'key': 'value'}" class="form-control" rows="3" ng-model-options="{ debounce: 1000 }" ng-change="parsejson()"></textarea>
+                
+                <!-- For Boolean field take value of on off-->
+                <input ng-if="allowed_values_view == 'boolean'" type="text" ng-model='allowed_values.boolean.on' placeholder="Value for On" class="form-control">
+                <input ng-if="allowed_values_view == 'boolean'" type="text" ng-model='allowed_values.boolean.off' placeholder="Value for Off" class="form-control">
+
+                <!--Select List for Node Reference--> 
+                <select  class="form-control" ng-if="allowed_values_view == 'select_node'" ng-options="item.label for item in ref_node track by item.machine_name" ng-model="allowed_values.node_reference" ></select>
+                
+                <!--Select List for Term Reference--> 
+                <select class="form-control" ng-if="allowed_values_view == 'select_term'" ng-options="item.label for item in ref_term track by item.machine_name" ng-model="allowed_values.term_reference" ng-change="ReferenceChange()"></select>
+            </div>
+        </li>
+        <!--Get Limit for Ref type fields -->
+        <li class="list-group-item col-xs-12" ng-if="['select_node','select_term','select_users'].indexOf(allowed_values_view) > -1">
+            <div class="col-xs-2"><label>Number of Values</label> </div>
+            <div class="col-xs-10">
+            <select class="form-control" ng-options="num for num in limitfield" ng-model="field.ref_limit" required></select>
+                <p class="help-block">Limit for References</p>        
+            </div>
+        </li>
+        <!-- Option for showing node ref -->
+        
+        <li class="list-group-item col-xs-12" ng-if="allowed_values_view == 'select_node'">
+            <div class="col-xs-10 pull-right">
+              <label>
+                <input type="radio" ng-model="field.widget_type" value="auto">
+                Autocomplete
+              </label><br/>
+              <label>
+                <input type="radio" ng-model="field.widget_type" value="list">
+                Select List
+              </label>
+            </div>
+        </li>
+
+        <!--Get max  number for number field only -->
+        <li class="list-group-item col-xs-12" ng-if="allowed_values_view == 'number'">
+            <div class="col-xs-2"><label>Max Number</label> </div>
+            <div class="col-xs-10">
+                <input type="number"  class="form-control" ng-model="field.default_value.max">
+            </div>
+        </li>
+
+        <!-- Default Values Fields -->
+        <li class="list-group-item col-xs-12" ng-if="['select_node','select_term','select_users'].indexOf(allowed_values_view) == -1">
+            <div class="col-xs-2"><label>Default Value</label></div>
+            <div class="col-xs-10">
+
+                <div ng-if="field.type.value=='date'" ng-init="field.default_value.value = field.default_value.value ? stringToDate(field.default_value.value) : null">
+                    <input type="date" id="dateInput" name="input"  class="form-control" ng-model="field.default_value.value" placeholder="yyyy-MM-dd" min="2013-01-01" />
+               </div>
+               
+                <div ng-if="field.type.value=='number'">
+                    <input type="number" ng-model="field.default_value.value"  class="form-control" ng-attr-max="{{field.default_value.max}}">
+               </div>
+
+                <div ng-if="field.type.value=='text'">
+                    <input ng-model='field.default_value.value' class="form-control">
+               </div>
+ 
+               <div ng-if="field.type.value=='textarea'">
+                    <textarea ng-model='field.default_value.value' class="form-control" rows="3" ></textarea>
+               </div>
+                
+               <div ng-if="field.type.value=='longtext'" ng-init="field.default_value.type = field.default_value.type ? field.default_value.type : 'ckeditor'">
+
+                    <textarea ng-if="field.default_value.type == 'ckeditor'" ng-model='field.default_value.value' class="form-control" ckeditor="editorOptions" ></textarea>
+                    <textarea ng-if="field.default_value.type == 'plain_text'" ng-model='field.default_value.value' class="form-control" rows="15"> testing </textarea>
+                    <div>
+                        <button type="button" class="btn btn-sm btn-primary" ng-click="seteditor('ckeditor')">Full Html</button>
+                        <button type="button" class="btn btn-sm btn-primary" ng-click="seteditor('plain_text')">Plain Text</button>
+                    </div>
+               </div>
+               <div ng-if="field.type.value=='image'">
+                    <input ng-required="contenttype.required" class="pull-left" type="file" name="image" accept="image/*" ngf-max-size="5MB" ngf-select ng-model='temp_image'>
+                    <button type="button" class="pull-left btn btn-primary" ng-click="uploadfile(temp_image,'image')"><i class="fa fa-upload"></i></button>
+                    <div class="col-xs-12">
+                        <div class="col-xs-12 nopadding">
+                            <a ng-href="{{base_path}}{{field.default_value.url}}" ng-if="field.default_value.filename">{{field.default_value.filename}}</a>
+                        </div>
+                        <img ng-if="field.default_value.url" style="height:200px;width:200px" ng-src="{{base_path}}{{field.default_value.url}}" class="thumb"> 
+                    </div>
+                </div>
+
+
+               <div ng-if="field.type.value=='file'">
+                    <input ng-required="contenttype.required" class="pull-left" type="file"ngf-max-size="5MB" ngf-select ng-model='temp_file'>
+                    <button type="button" class="pull-left btn btn-primary" ng-click="uploadfile(temp_file,'file')"><i class="fa fa-upload"></i></button>
+
+                    <div class="col-xs-12" ng-if="field.default_value.filename">
+                        <a ng-href="{{base_path}}{{field.default_value.url}}">{{field.default_value.filename}}</a>
+                    </div>
+                </div>
+
+                <div ng-if="field.type.value=='list/select'">
+                  <select  class="form-control" ng-model='field.default_value.value' ng-options="key as  value for (key , value) in parsedjson"></select>
+                </div>
+                
+                <div ng-if="field.type.value=='list/radio'"  class="radio" ng-repeat="(key, value) in parsedjson">
+                    <label><input type="radio" ng-model='field.default_value.value' value="{{key}}">{{value}}</label>
+                </div>
+                
+                <div ng-if="field.type.value=='list/checkbox'"  class="checkbox" ng-repeat="(key, value) in parsedjson">
+                    <label><input type="checkbox" ng-model='field.default_value.value[key]'>{{value}}</label>
+                </div>
+                <div ng-if="field.type.value=='boolean'" class="checkbox">
+                     <label>
+                        <input type="checkbox" ng-model='field.default_value.value'>{{field.label}}</label>
+                </div>
+
+
+             </div>
+        </li>
+
+
+        <!--Checkbox for Required -->
+        <li class="list-group-item col-xs-12">
+            <div class="col-xs-2"></div>
+            <div class="col-xs-10">
+                <label><input type="checkbox" ng-model="field.required" name="required" value="1"> Required Field </label>
+             </div>
+        </li>
+
+        <!--Checkbox for Display -->
+        <li class="list-group-item col-xs-12">
+            <div class="col-xs-2"></div>
+            <div class="col-xs-10">
+                <label><input type="checkbox" ng-init="field.display_on_body=true" ng-model="field.display_on_body" name="display_on_body" value="1"> Display on Body</label>
+             </div>
+        </li>
+        
+        <li class="list-group-item col-xs-12">
+            <div class="col-xs-2"></div>
+            <div class="col-xs-10">
+                   <button type="submit"  class="btn btn-primary">Update Field</button>
+             </div>
+        </li>
+      
+    </ul>
+</form>

@@ -1,0 +1,19 @@
+[
+    {
+        "image": "../images/k1.jpg",
+
+    },
+    {
+        "image": "../images/k1.jpg",
+        "thumb": "/image2_thumb.jpg",
+    },
+
+    {
+        "image": "../images/k3.jpg",
+        "thumb": "/image1_thumb.jpg",
+    },
+    {
+        "image": "../images/k3.jpg",
+        "thumb": "/image2_thumb.jpg",
+    }
+]

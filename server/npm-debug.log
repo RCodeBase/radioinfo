@@ -1,0 +1,494 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/home/ritesh/.nvm/v0.11.14/bin/node',
+1 verbose cli   '/home/ritesh/.nvm/v0.11.14/bin/npm',
+1 verbose cli   'install' ]
+2 info using npm@2.0.0
+3 info using node@v0.11.14
+4 verbose readDependencies using package.json deps
+5 verbose install where, deps [ '/home/ritesh/radioinfo/radioinfo/server',
+5 verbose install   [ 'bcrypt-nodejs',
+5 verbose install     'body-parser',
+5 verbose install     'connect',
+5 verbose install     'connect-mongo',
+5 verbose install     'cookie-parser',
+5 verbose install     'express',
+5 verbose install     'express-cors',
+5 verbose install     'express-session',
+5 verbose install     'mongoose',
+5 verbose install     'nodemailer',
+5 verbose install     'passport',
+5 verbose install     'passport-facebook',
+5 verbose install     'passport-google-oauth',
+5 verbose install     'passport-local',
+5 verbose install     'passport-twitter',
+5 verbose install     'serve-favicon',
+5 verbose install     'mongoose-unique-validator',
+5 verbose install     'underscore',
+5 verbose install     'request',
+5 verbose install     'busboy' ] ]
+6 info preinstall Radioinfo@0.0.0
+7 warn package.json express-cors@0.0.3 No repository field.
+8 warn package.json gulp-minify-css@1.2.4 No repository field.
+9 verbose readDependencies using package.json deps
+10 verbose already installed skipping passport@~0.1.17 /home/ritesh/radioinfo/radioinfo/server
+11 verbose already installed skipping passport-facebook@~1.0.2 /home/ritesh/radioinfo/radioinfo/server
+12 verbose already installed skipping passport-google-oauth@~0.1.5 /home/ritesh/radioinfo/radioinfo/server
+13 verbose already installed skipping passport-local@~0.1.6 /home/ritesh/radioinfo/radioinfo/server
+14 verbose already installed skipping passport-twitter@~1.0.2 /home/ritesh/radioinfo/radioinfo/server
+15 verbose already installed skipping serve-favicon@~2.3.0 /home/ritesh/radioinfo/radioinfo/server
+16 verbose cache add [ 'mongoose-unique-validator@latest', null ]
+17 verbose cache add spec="mongoose-unique-validator@latest" args=["mongoose-unique-validator@latest",null]
+18 verbose parsed spec { raw: 'mongoose-unique-validator@latest',
+18 verbose parsed spec   scope: null,
+18 verbose parsed spec   name: 'mongoose-unique-validator',
+18 verbose parsed spec   rawSpec: 'latest',
+18 verbose parsed spec   spec: 'latest',
+18 verbose parsed spec   type: 'tag' }
+19 verbose cache add [ 'underscore@latest', null ]
+20 verbose cache add spec="underscore@latest" args=["underscore@latest",null]
+21 verbose parsed spec { raw: 'underscore@latest',
+21 verbose parsed spec   scope: null,
+21 verbose parsed spec   name: 'underscore',
+21 verbose parsed spec   rawSpec: 'latest',
+21 verbose parsed spec   spec: 'latest',
+21 verbose parsed spec   type: 'tag' }
+22 verbose cache add [ 'request@latest', null ]
+23 verbose cache add spec="request@latest" args=["request@latest",null]
+24 verbose parsed spec { raw: 'request@latest',
+24 verbose parsed spec   scope: null,
+24 verbose parsed spec   name: 'request',
+24 verbose parsed spec   rawSpec: 'latest',
+24 verbose parsed spec   spec: 'latest',
+24 verbose parsed spec   type: 'tag' }
+25 verbose cache add [ 'busboy@latest', null ]
+26 verbose cache add spec="busboy@latest" args=["busboy@latest",null]
+27 verbose parsed spec { raw: 'busboy@latest',
+27 verbose parsed spec   scope: null,
+27 verbose parsed spec   name: 'busboy',
+27 verbose parsed spec   rawSpec: 'latest',
+27 verbose parsed spec   spec: 'latest',
+27 verbose parsed spec   type: 'tag' }
+28 verbose cache add [ 'bcrypt-nodejs@latest', null ]
+29 verbose cache add spec="bcrypt-nodejs@latest" args=["bcrypt-nodejs@latest",null]
+30 verbose parsed spec { raw: 'bcrypt-nodejs@latest',
+30 verbose parsed spec   scope: null,
+30 verbose parsed spec   name: 'bcrypt-nodejs',
+30 verbose parsed spec   rawSpec: 'latest',
+30 verbose parsed spec   spec: 'latest',
+30 verbose parsed spec   type: 'tag' }
+31 verbose already installed skipping body-parser@~1.13.2 /home/ritesh/radioinfo/radioinfo/server
+32 verbose parsed spec { raw: 'mongoose-unique-validator@latest',
+32 verbose parsed spec   scope: null,
+32 verbose parsed spec   name: 'mongoose-unique-validator',
+32 verbose parsed spec   rawSpec: 'latest',
+32 verbose parsed spec   spec: 'latest',
+32 verbose parsed spec   type: 'tag' }
+33 verbose addNamed [ 'mongoose-unique-validator', 'latest' ]
+34 verbose addNamed [ null, null ]
+35 verbose parsed spec { raw: 'underscore@latest',
+35 verbose parsed spec   scope: null,
+35 verbose parsed spec   name: 'underscore',
+35 verbose parsed spec   rawSpec: 'latest',
+35 verbose parsed spec   spec: 'latest',
+35 verbose parsed spec   type: 'tag' }
+36 verbose addNamed [ 'underscore', 'latest' ]
+37 verbose addNamed [ null, null ]
+38 verbose parsed spec { raw: 'request@latest',
+38 verbose parsed spec   scope: null,
+38 verbose parsed spec   name: 'request',
+38 verbose parsed spec   rawSpec: 'latest',
+38 verbose parsed spec   spec: 'latest',
+38 verbose parsed spec   type: 'tag' }
+39 verbose addNamed [ 'request', 'latest' ]
+40 verbose addNamed [ null, null ]
+41 verbose parsed spec { raw: 'busboy@latest',
+41 verbose parsed spec   scope: null,
+41 verbose parsed spec   name: 'busboy',
+41 verbose parsed spec   rawSpec: 'latest',
+41 verbose parsed spec   spec: 'latest',
+41 verbose parsed spec   type: 'tag' }
+42 verbose addNamed [ 'busboy', 'latest' ]
+43 verbose addNamed [ null, null ]
+44 verbose parsed spec { raw: 'bcrypt-nodejs@latest',
+44 verbose parsed spec   scope: null,
+44 verbose parsed spec   name: 'bcrypt-nodejs',
+44 verbose parsed spec   rawSpec: 'latest',
+44 verbose parsed spec   spec: 'latest',
+44 verbose parsed spec   type: 'tag' }
+45 verbose addNamed [ 'bcrypt-nodejs', 'latest' ]
+46 verbose addNamed [ null, null ]
+47 silly lockFile 923532d8-mongoose-unique-validator-latest mongoose-unique-validator@latest
+48 verbose lock mongoose-unique-validator@latest /home/ritesh/.npm/923532d8-mongoose-unique-validator-latest.lock
+49 silly lockFile 546e1155-underscore-latest underscore@latest
+50 verbose lock underscore@latest /home/ritesh/.npm/546e1155-underscore-latest.lock
+51 silly lockFile 5da6dfb1-request-latest request@latest
+52 verbose lock request@latest /home/ritesh/.npm/5da6dfb1-request-latest.lock
+53 silly lockFile b47a07ef-busboy-latest busboy@latest
+54 verbose lock busboy@latest /home/ritesh/.npm/b47a07ef-busboy-latest.lock
+55 silly lockFile 8a2c73f6-bcrypt-nodejs-latest bcrypt-nodejs@latest
+56 verbose lock bcrypt-nodejs@latest /home/ritesh/.npm/8a2c73f6-bcrypt-nodejs-latest.lock
+57 info addNameTag [ 'mongoose-unique-validator', 'latest' ]
+58 verbose mapToRegistry name mongoose-unique-validator
+59 verbose mapToRegistry uri https://registry.npmjs.org/mongoose-unique-validator
+60 info addNameTag [ 'underscore', 'latest' ]
+61 verbose mapToRegistry name underscore
+62 verbose mapToRegistry uri https://registry.npmjs.org/underscore
+63 info addNameTag [ 'request', 'latest' ]
+64 verbose mapToRegistry name request
+65 verbose mapToRegistry uri https://registry.npmjs.org/request
+66 info addNameTag [ 'busboy', 'latest' ]
+67 verbose mapToRegistry name busboy
+68 verbose mapToRegistry uri https://registry.npmjs.org/busboy
+69 verbose already installed skipping connect@^2.30.2 /home/ritesh/radioinfo/radioinfo/server
+70 verbose already installed skipping connect-mongo@0.8.2 /home/ritesh/radioinfo/radioinfo/server
+71 verbose already installed skipping cookie-parser@~1.3.5 /home/ritesh/radioinfo/radioinfo/server
+72 verbose already installed skipping express@~4.13.1 /home/ritesh/radioinfo/radioinfo/server
+73 info addNameTag [ 'bcrypt-nodejs', 'latest' ]
+74 verbose mapToRegistry name bcrypt-nodejs
+75 verbose mapToRegistry uri https://registry.npmjs.org/bcrypt-nodejs
+76 verbose already installed skipping express-cors@0.0.3 /home/ritesh/radioinfo/radioinfo/server
+77 verbose already installed skipping express-session@~1.0.0 /home/ritesh/radioinfo/radioinfo/server
+78 verbose request on initialization, where is /mongoose-unique-validator
+79 verbose request after pass 1, where is /mongoose-unique-validator
+80 verbose request url raw /mongoose-unique-validator
+81 verbose request resolving registry [ 'https://registry.npmjs.org/', './mongoose-unique-validator' ]
+82 verbose request after pass 2, where is https://registry.npmjs.org/mongoose-unique-validator
+83 verbose request no auth needed
+84 info attempt registry request try #1 at 12:10:12
+85 verbose request id c6a163ab37785bcd
+86 verbose etag "AMDI4V2K6A7GHAC56ZBES2G8R"
+87 http request GET https://registry.npmjs.org/mongoose-unique-validator
+88 verbose request on initialization, where is /busboy
+89 verbose request after pass 1, where is /busboy
+90 verbose request url raw /busboy
+91 verbose request resolving registry [ 'https://registry.npmjs.org/', './busboy' ]
+92 verbose request after pass 2, where is https://registry.npmjs.org/busboy
+93 verbose request no auth needed
+94 info attempt registry request try #1 at 12:10:12
+95 verbose etag "6G4TGOH41GY2VQ7CY3SH71JY0"
+96 http request GET https://registry.npmjs.org/busboy
+97 verbose already installed skipping mongoose@~3.8.1 /home/ritesh/radioinfo/radioinfo/server
+98 verbose already installed skipping nodemailer@0.7.1 /home/ritesh/radioinfo/radioinfo/server
+99 verbose request on initialization, where is /bcrypt-nodejs
+100 verbose request after pass 1, where is /bcrypt-nodejs
+101 verbose request url raw /bcrypt-nodejs
+102 verbose request resolving registry [ 'https://registry.npmjs.org/', './bcrypt-nodejs' ]
+103 verbose request after pass 2, where is https://registry.npmjs.org/bcrypt-nodejs
+104 verbose request no auth needed
+105 info attempt registry request try #1 at 12:10:12
+106 verbose etag "8MGPEQYO8B6LTQELJSNNC2X6T"
+107 http request GET https://registry.npmjs.org/bcrypt-nodejs
+108 verbose request on initialization, where is /request
+109 verbose request after pass 1, where is /request
+110 verbose request url raw /request
+111 verbose request resolving registry [ 'https://registry.npmjs.org/', './request' ]
+112 verbose request after pass 2, where is https://registry.npmjs.org/request
+113 verbose request no auth needed
+114 info attempt registry request try #1 at 12:10:12
+115 verbose etag "EDI6G06GIFBTMADMV7KXYEAG6"
+116 http request GET https://registry.npmjs.org/request
+117 verbose request on initialization, where is /underscore
+118 verbose request after pass 1, where is /underscore
+119 verbose request url raw /underscore
+120 verbose request resolving registry [ 'https://registry.npmjs.org/', './underscore' ]
+121 verbose request after pass 2, where is https://registry.npmjs.org/underscore
+122 verbose request no auth needed
+123 info attempt registry request try #1 at 12:10:12
+124 verbose etag "DAOGAQIM1EMZ3ECE5P6Q46M0H"
+125 http request GET https://registry.npmjs.org/underscore
+126 http 304 https://registry.npmjs.org/busboy
+127 silly registry.get cb [ 304,
+127 silly registry.get   { date: 'Wed, 16 Mar 2016 06:40:13 GMT',
+127 silly registry.get     via: '1.1 varnish',
+127 silly registry.get     'cache-control': 'max-age=300',
+127 silly registry.get     etag: '"6G4TGOH41GY2VQ7CY3SH71JY0"',
+127 silly registry.get     age: '206',
+127 silly registry.get     connection: 'close',
+127 silly registry.get     'x-served-by': 'cache-ams4123-AMS',
+127 silly registry.get     'x-cache': 'HIT',
+127 silly registry.get     'x-cache-hits': '1',
+127 silly registry.get     'x-timer': 'S1458110413.913957,VS0,VE0',
+127 silly registry.get     vary: 'Accept' } ]
+128 verbose etag https://registry.npmjs.org/busboy from cache
+129 verbose addNamed [ 'busboy', '0.2.12' ]
+130 verbose addNamed [ '0.2.12', '0.2.12' ]
+131 silly lockFile a594c9e1-busboy-0-2-12 busboy@0.2.12
+132 verbose lock busboy@0.2.12 /home/ritesh/.npm/a594c9e1-busboy-0-2-12.lock
+133 silly lockFile a594c9e1-busboy-0-2-12 busboy@0.2.12
+134 silly lockFile a594c9e1-busboy-0-2-12 busboy@0.2.12
+135 silly lockFile b47a07ef-busboy-latest busboy@latest
+136 silly lockFile b47a07ef-busboy-latest busboy@latest
+137 info already installed busboy@0.2.12
+138 http 304 https://registry.npmjs.org/request
+139 silly registry.get cb [ 304,
+139 silly registry.get   { date: 'Wed, 16 Mar 2016 06:40:13 GMT',
+139 silly registry.get     via: '1.1 varnish',
+139 silly registry.get     'cache-control': 'max-age=300',
+139 silly registry.get     etag: '"EDI6G06GIFBTMADMV7KXYEAG6"',
+139 silly registry.get     age: '284',
+139 silly registry.get     connection: 'close',
+139 silly registry.get     'x-served-by': 'cache-ams4136-AMS',
+139 silly registry.get     'x-cache': 'HIT',
+139 silly registry.get     'x-cache-hits': '7',
+139 silly registry.get     'x-timer': 'S1458110413.946423,VS0,VE0',
+139 silly registry.get     vary: 'Accept' } ]
+140 verbose etag https://registry.npmjs.org/request from cache
+141 http 304 https://registry.npmjs.org/bcrypt-nodejs
+142 silly registry.get cb [ 304,
+142 silly registry.get   { date: 'Wed, 16 Mar 2016 06:40:13 GMT',
+142 silly registry.get     via: '1.1 varnish',
+142 silly registry.get     'cache-control': 'max-age=300',
+142 silly registry.get     etag: '"8MGPEQYO8B6LTQELJSNNC2X6T"',
+142 silly registry.get     age: '65',
+142 silly registry.get     connection: 'close',
+142 silly registry.get     'x-served-by': 'cache-ams4146-AMS',
+142 silly registry.get     'x-cache': 'HIT',
+142 silly registry.get     'x-cache-hits': '1',
+142 silly registry.get     'x-timer': 'S1458110413.946893,VS0,VE0',
+142 silly registry.get     vary: 'Accept' } ]
+143 verbose etag https://registry.npmjs.org/bcrypt-nodejs from cache
+144 http 304 https://registry.npmjs.org/underscore
+145 silly registry.get cb [ 304,
+145 silly registry.get   { date: 'Wed, 16 Mar 2016 06:40:13 GMT',
+145 silly registry.get     via: '1.1 varnish',
+145 silly registry.get     'cache-control': 'max-age=300',
+145 silly registry.get     etag: '"DAOGAQIM1EMZ3ECE5P6Q46M0H"',
+145 silly registry.get     age: '63',
+145 silly registry.get     connection: 'close',
+145 silly registry.get     'x-served-by': 'cache-ams4126-AMS',
+145 silly registry.get     'x-cache': 'HIT',
+145 silly registry.get     'x-cache-hits': '2',
+145 silly registry.get     'x-timer': 'S1458110413.950634,VS0,VE0',
+145 silly registry.get     vary: 'Accept' } ]
+146 verbose etag https://registry.npmjs.org/underscore from cache
+147 verbose addNamed [ 'bcrypt-nodejs', '0.0.3' ]
+148 verbose addNamed [ '0.0.3', '0.0.3' ]
+149 silly lockFile 30db234c-bcrypt-nodejs-0-0-3 bcrypt-nodejs@0.0.3
+150 verbose lock bcrypt-nodejs@0.0.3 /home/ritesh/.npm/30db234c-bcrypt-nodejs-0-0-3.lock
+151 verbose addNamed [ 'underscore', '1.8.3' ]
+152 verbose addNamed [ '1.8.3', '1.8.3' ]
+153 silly lockFile e5e32fca-underscore-1-8-3 underscore@1.8.3
+154 verbose lock underscore@1.8.3 /home/ritesh/.npm/e5e32fca-underscore-1-8-3.lock
+155 verbose addNamed [ 'request', '2.69.0' ]
+156 verbose addNamed [ '2.69.0', '2.69.0' ]
+157 silly lockFile 03846db2-request-2-69-0 request@2.69.0
+158 verbose lock request@2.69.0 /home/ritesh/.npm/03846db2-request-2-69-0.lock
+159 silly lockFile 30db234c-bcrypt-nodejs-0-0-3 bcrypt-nodejs@0.0.3
+160 silly lockFile 30db234c-bcrypt-nodejs-0-0-3 bcrypt-nodejs@0.0.3
+161 silly lockFile e5e32fca-underscore-1-8-3 underscore@1.8.3
+162 silly lockFile e5e32fca-underscore-1-8-3 underscore@1.8.3
+163 silly lockFile 8a2c73f6-bcrypt-nodejs-latest bcrypt-nodejs@latest
+164 silly lockFile 8a2c73f6-bcrypt-nodejs-latest bcrypt-nodejs@latest
+165 silly lockFile 546e1155-underscore-latest underscore@latest
+166 silly lockFile 546e1155-underscore-latest underscore@latest
+167 silly lockFile 03846db2-request-2-69-0 request@2.69.0
+168 silly lockFile 03846db2-request-2-69-0 request@2.69.0
+169 silly lockFile 5da6dfb1-request-latest request@latest
+170 silly lockFile 5da6dfb1-request-latest request@latest
+171 info already installed bcrypt-nodejs@0.0.3
+172 info already installed underscore@1.8.3
+173 info already installed request@2.69.0
+174 http 304 https://registry.npmjs.org/mongoose-unique-validator
+175 silly registry.get cb [ 304,
+175 silly registry.get   { date: 'Wed, 16 Mar 2016 06:40:13 GMT',
+175 silly registry.get     via: '1.1 varnish',
+175 silly registry.get     'cache-control': 'max-age=300',
+175 silly registry.get     etag: '"AMDI4V2K6A7GHAC56ZBES2G8R"',
+175 silly registry.get     age: '0',
+175 silly registry.get     connection: 'close',
+175 silly registry.get     'x-served-by': 'cache-ams4147-AMS',
+175 silly registry.get     'x-cache': 'HIT',
+175 silly registry.get     'x-cache-hits': '1',
+175 silly registry.get     'x-timer': 'S1458110413.913030,VS0,VE689',
+175 silly registry.get     vary: 'Accept' } ]
+176 verbose etag https://registry.npmjs.org/mongoose-unique-validator from cache
+177 verbose addNamed [ 'mongoose-unique-validator', '1.0.2' ]
+178 verbose addNamed [ '1.0.2', '1.0.2' ]
+179 silly lockFile d62c073d-mongoose-unique-validator-1-0-2 mongoose-unique-validator@1.0.2
+180 verbose lock mongoose-unique-validator@1.0.2 /home/ritesh/.npm/d62c073d-mongoose-unique-validator-1-0-2.lock
+181 silly lockFile d62c073d-mongoose-unique-validator-1-0-2 mongoose-unique-validator@1.0.2
+182 silly lockFile d62c073d-mongoose-unique-validator-1-0-2 mongoose-unique-validator@1.0.2
+183 silly lockFile 923532d8-mongoose-unique-validator-latest mongoose-unique-validator@latest
+184 silly lockFile 923532d8-mongoose-unique-validator-latest mongoose-unique-validator@latest
+185 info already installed mongoose-unique-validator@1.0.2
+186 silly resolved []
+187 info build /home/ritesh/radioinfo/radioinfo/server
+188 verbose linkStuff [ false, false, false, '/home/ritesh/radioinfo/radioinfo' ]
+189 info linkStuff Radioinfo@0.0.0
+190 verbose linkBins Radioinfo@0.0.0
+191 verbose linkMans Radioinfo@0.0.0
+192 verbose rebuildBundles Radioinfo@0.0.0
+193 verbose rebuildBundles [ '.bin',
+193 verbose rebuildBundles   'async',
+193 verbose rebuildBundles   'bcrypt-nodejs',
+193 verbose rebuildBundles   'body-parser',
+193 verbose rebuildBundles   'busboy',
+193 verbose rebuildBundles   'connect',
+193 verbose rebuildBundles   'connect-mongo',
+193 verbose rebuildBundles   'cookie-parser',
+193 verbose rebuildBundles   'express',
+193 verbose rebuildBundles   'express-cors',
+193 verbose rebuildBundles   'express-session',
+193 verbose rebuildBundles   'gulp',
+193 verbose rebuildBundles   'gulp-concat',
+193 verbose rebuildBundles   'gulp-minify-css',
+193 verbose rebuildBundles   'http-proxy',
+193 verbose rebuildBundles   'mongoose',
+193 verbose rebuildBundles   'mongoose-unique-validator',
+193 verbose rebuildBundles   'nodemailer',
+193 verbose rebuildBundles   'passport',
+193 verbose rebuildBundles   'passport-facebook',
+193 verbose rebuildBundles   'passport-google-oauth',
+193 verbose rebuildBundles   'passport-local',
+193 verbose rebuildBundles   'passport-twitter',
+193 verbose rebuildBundles   'request',
+193 verbose rebuildBundles   'serve-favicon',
+193 verbose rebuildBundles   'soap',
+193 verbose rebuildBundles   'underscore',
+193 verbose rebuildBundles   'universal-analytics' ]
+194 verbose rebuild bundle /home/ritesh/radioinfo/radioinfo/server/node_modules/async
+195 info build /home/ritesh/radioinfo/radioinfo/server/node_modules/async
+196 info preinstall async@1.5.2
+197 verbose linkStuff [ false,
+197 verbose linkStuff   false,
+197 verbose linkStuff   false,
+197 verbose linkStuff   '/home/ritesh/radioinfo/radioinfo/server/node_modules' ]
+198 info linkStuff async@1.5.2
+199 verbose linkBins async@1.5.2
+200 verbose linkMans async@1.5.2
+201 verbose rebuildBundles async@1.5.2
+202 info install async@1.5.2
+203 info postinstall async@1.5.2
+204 verbose rebuild bundle /home/ritesh/radioinfo/radioinfo/server/node_modules/gulp
+205 info build /home/ritesh/radioinfo/radioinfo/server/node_modules/gulp
+206 info preinstall gulp@3.9.1
+207 verbose linkStuff [ false,
+207 verbose linkStuff   false,
+207 verbose linkStuff   false,
+207 verbose linkStuff   '/home/ritesh/radioinfo/radioinfo/server/node_modules' ]
+208 info linkStuff gulp@3.9.1
+209 verbose linkBins gulp@3.9.1
+210 verbose link bins [ { gulp: './bin/gulp.js' },
+210 verbose link bins   '/home/ritesh/radioinfo/radioinfo/server/node_modules/.bin',
+210 verbose link bins   false ]
+211 verbose linkMans gulp@3.9.1
+212 verbose rebuildBundles gulp@3.9.1
+213 verbose rebuildBundles [ '.bin',
+213 verbose rebuildBundles   'archy',
+213 verbose rebuildBundles   'chalk',
+213 verbose rebuildBundles   'deprecated',
+213 verbose rebuildBundles   'gulp-util',
+213 verbose rebuildBundles   'interpret',
+213 verbose rebuildBundles   'liftoff',
+213 verbose rebuildBundles   'minimist',
+213 verbose rebuildBundles   'orchestrator',
+213 verbose rebuildBundles   'pretty-hrtime',
+213 verbose rebuildBundles   'semver',
+213 verbose rebuildBundles   'tildify',
+213 verbose rebuildBundles   'v8flags',
+213 verbose rebuildBundles   'vinyl-fs' ]
+214 verbose gentlyRm vacuuming /home/ritesh/radioinfo/radioinfo/server/node_modules/.bin/gulp
+215 silly gentlyRm purging /home/ritesh/radioinfo/radioinfo/server/node_modules/.bin/gulp
+216 silly gentlyRm removing /home/ritesh/radioinfo/radioinfo/server/node_modules/.bin
+217 silly gentlyRm quitting because other entries in /home/ritesh/radioinfo/radioinfo/server/node_modules
+218 info install gulp@3.9.1
+219 info postinstall gulp@3.9.1
+220 verbose rebuild bundle /home/ritesh/radioinfo/radioinfo/server/node_modules/gulp-concat
+221 info build /home/ritesh/radioinfo/radioinfo/server/node_modules/gulp-concat
+222 info preinstall gulp-concat@2.6.0
+223 verbose linkStuff [ false,
+223 verbose linkStuff   false,
+223 verbose linkStuff   false,
+223 verbose linkStuff   '/home/ritesh/radioinfo/radioinfo/server/node_modules' ]
+224 info linkStuff gulp-concat@2.6.0
+225 verbose linkBins gulp-concat@2.6.0
+226 verbose linkMans gulp-concat@2.6.0
+227 verbose rebuildBundles gulp-concat@2.6.0
+228 verbose rebuildBundles [ 'concat-with-sourcemaps', 'gulp-util', 'through2' ]
+229 info install gulp-concat@2.6.0
+230 info postinstall gulp-concat@2.6.0
+231 verbose rebuild bundle /home/ritesh/radioinfo/radioinfo/server/node_modules/gulp-minify-css
+232 info build /home/ritesh/radioinfo/radioinfo/server/node_modules/gulp-minify-css
+233 info preinstall gulp-minify-css@1.2.4
+234 verbose linkStuff [ false,
+234 verbose linkStuff   false,
+234 verbose linkStuff   false,
+234 verbose linkStuff   '/home/ritesh/radioinfo/radioinfo/server/node_modules' ]
+235 info linkStuff gulp-minify-css@1.2.4
+236 verbose linkBins gulp-minify-css@1.2.4
+237 verbose linkMans gulp-minify-css@1.2.4
+238 verbose rebuildBundles gulp-minify-css@1.2.4
+239 verbose rebuildBundles [ '.bin',
+239 verbose rebuildBundles   'clean-css',
+239 verbose rebuildBundles   'gulp-util',
+239 verbose rebuildBundles   'object-assign',
+239 verbose rebuildBundles   'readable-stream',
+239 verbose rebuildBundles   'vinyl-bufferstream',
+239 verbose rebuildBundles   'vinyl-sourcemaps-apply' ]
+240 info install gulp-minify-css@1.2.4
+241 info postinstall gulp-minify-css@1.2.4
+242 verbose rebuild bundle /home/ritesh/radioinfo/radioinfo/server/node_modules/http-proxy
+243 info build /home/ritesh/radioinfo/radioinfo/server/node_modules/http-proxy
+244 info preinstall http-proxy@1.13.2
+245 verbose linkStuff [ false,
+245 verbose linkStuff   false,
+245 verbose linkStuff   false,
+245 verbose linkStuff   '/home/ritesh/radioinfo/radioinfo/server/node_modules' ]
+246 info linkStuff http-proxy@1.13.2
+247 verbose linkBins http-proxy@1.13.2
+248 verbose linkMans http-proxy@1.13.2
+249 verbose rebuildBundles http-proxy@1.13.2
+250 verbose rebuildBundles [ 'eventemitter3', 'requires-port' ]
+251 info install http-proxy@1.13.2
+252 info postinstall http-proxy@1.13.2
+253 verbose rebuild bundle /home/ritesh/radioinfo/radioinfo/server/node_modules/soap
+254 info build /home/ritesh/radioinfo/radioinfo/server/node_modules/soap
+255 info preinstall soap@0.13.0
+256 verbose linkStuff [ false,
+256 verbose linkStuff   false,
+256 verbose linkStuff   false,
+256 verbose linkStuff   '/home/ritesh/radioinfo/radioinfo/server/node_modules' ]
+257 info linkStuff soap@0.13.0
+258 verbose linkBins soap@0.13.0
+259 verbose linkMans soap@0.13.0
+260 verbose rebuildBundles soap@0.13.0
+261 verbose rebuildBundles [ '.bin', 'debug', 'lodash', 'sax', 'selectn', 'strip-bom' ]
+262 info install soap@0.13.0
+263 info postinstall soap@0.13.0
+264 verbose rebuild bundle /home/ritesh/radioinfo/radioinfo/server/node_modules/universal-analytics
+265 info build /home/ritesh/radioinfo/radioinfo/server/node_modules/universal-analytics
+266 info preinstall universal-analytics@0.3.10
+267 verbose linkStuff [ false,
+267 verbose linkStuff   false,
+267 verbose linkStuff   false,
+267 verbose linkStuff   '/home/ritesh/radioinfo/radioinfo/server/node_modules' ]
+268 info linkStuff universal-analytics@0.3.10
+269 verbose linkBins universal-analytics@0.3.10
+270 verbose linkMans universal-analytics@0.3.10
+271 verbose rebuildBundles universal-analytics@0.3.10
+272 verbose rebuildBundles [ '.bin', 'async', 'node-uuid' ]
+273 info install universal-analytics@0.3.10
+274 info postinstall universal-analytics@0.3.10
+275 info install Radioinfo@0.0.0
+276 info postinstall Radioinfo@0.0.0
+277 info prepublish Radioinfo@0.0.0
+278 verbose stack Error: The package mongoose does not satisfy its siblings' peerDependencies requirements!
+278 verbose stack     at /home/ritesh/.nvm/v0.11.14/lib/node_modules/npm/lib/install.js:98:32
+278 verbose stack     at /home/ritesh/.nvm/v0.11.14/lib/node_modules/npm/lib/install.js:202:5
+278 verbose stack     at /home/ritesh/.nvm/v0.11.14/lib/node_modules/npm/node_modules/read-installed/read-installed.js:138:5
+278 verbose stack     at /home/ritesh/.nvm/v0.11.14/lib/node_modules/npm/node_modules/read-installed/read-installed.js:251:14
+278 verbose stack     at cb (/home/ritesh/.nvm/v0.11.14/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+278 verbose stack     at /home/ritesh/.nvm/v0.11.14/lib/node_modules/npm/node_modules/read-installed/read-installed.js:251:14
+278 verbose stack     at cb (/home/ritesh/.nvm/v0.11.14/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+278 verbose stack     at /home/ritesh/.nvm/v0.11.14/lib/node_modules/npm/node_modules/read-installed/read-installed.js:251:14
+278 verbose stack     at cb (/home/ritesh/.nvm/v0.11.14/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+278 verbose stack     at /home/ritesh/.nvm/v0.11.14/lib/node_modules/npm/node_modules/read-installed/read-installed.js:251:14
+279 verbose cwd /home/ritesh/radioinfo/radioinfo/server
+280 error Linux 3.16.0-30-generic
+281 error argv "/home/ritesh/.nvm/v0.11.14/bin/node" "/home/ritesh/.nvm/v0.11.14/bin/npm" "install"
+282 error node v0.11.14
+283 error npm  v2.0.0
+284 error code EPEERINVALID
+285 error peerinvalid The package mongoose does not satisfy its siblings' peerDependencies requirements!
+285 error peerinvalid Peer mongoose-unique-validator@1.0.2 wants mongoose@^4.2.8
+286 verbose exit [ 1, true ]

@@ -1,0 +1,19 @@
+<div class="col-xs-12 margin_bottom">
+	<div class="col-xs-2"><label>Select Sorting </label>  </div>
+	<div class="col-xs-4"> 
+		<select class="form-control" ng-model="select_type" ng-change="typechange()">
+		    <option value="home_slider" selected="true">Homepage Slider </option>
+		    <option value="home_list">Homepage List</option>
+		    <option value="hot_news">Hot News</option>
+		</select>
+	</div>
+</div>
+
+<div class="col-xs-12">
+	<div ui-grid="newsGrid" class="myGrid" ui-grid-draggable-rows></div>
+</div>
+
+<div> 
+	<button type="button" class="btn btn-primary" ng-click="savesorting()"> Save Sorting</button>
+
+</div>
